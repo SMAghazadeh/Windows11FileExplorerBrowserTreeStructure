@@ -9,8 +9,9 @@ export const Tree = () => {
     const { treeData } = useStore();
 
     return (
-        <div className="flex flex-col gap-14 ">
+        <div className="flex flex-col  ">
             <h1 className="text-center text-[30px] text-white">Windows 11 file explorer browser tree structure</h1>
+
             <div className=" h-full m-5 p-5 bg-slate-100 rounded-lg flex  ">
                 <div className="  flex flex-col">
                     {treeData.map((node) => (
