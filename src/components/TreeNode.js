@@ -4,7 +4,7 @@ import { File, FolderClosed, FolderOpenDot } from "lucide-react";
 
 export const TreeNode = ({ node }) => {
     //state
-    const { toggleFolder, selectItem, selectedItem ,selectItemForChild ,isSelectedChild ,isSelectedMainFolder} = useStore();
+    const { toggleFolder, selectItem, selectedItem ,selectItemForChild ,isSelectedChild ,isSelectedMainFolder ,selectTextForShow} = useStore();
     const isSelected = selectedItem === node.id;
 
     //render
@@ -34,7 +34,10 @@ export const TreeNode = ({ node }) => {
                 {node.type === 'file' && (
                     <Button
                         variant="ghost"
-                        onClick={()=> selectItemForChild(node.id)}
+                        onClick={()=> {
+                            selectItemForChild(node.id)
+                            selectTextForShow(node?.text)
+                        }}
                         className={`hover:bg-blue-400 ${isSelectedChild === node.id && 'bg-blue-400'} text-xs`}
                     >
                         < File className="w-5 h-5 " color="yellow" />{node.name}
