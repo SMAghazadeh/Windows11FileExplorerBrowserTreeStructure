@@ -4,7 +4,7 @@ import { File, FolderClosed, FolderOpenDot } from "lucide-react";
 
 export const TreeNode = ({ node }) => {
     //state
-    const { toggleFolder, selectItem, selectedItem } = useStore();
+    const { toggleFolder, selectItem, selectedItem ,selectItemForChild ,isSelectedChild ,isSelectedMainFolder} = useStore();
     const isSelected = selectedItem === node.id;
 
     //render
@@ -15,10 +15,12 @@ export const TreeNode = ({ node }) => {
                     <Button
                         onClick={() => { selectItem(node.id), toggleFolder(node.id) }}
                         variant="ghost"
+                        className={`hover:bg-blue-400 ${isSelectedMainFolder && node.isOpen && 'bg-blue-500'}
+                         h-fit text-xs`}
                     >
                         {isSelected && node.isOpen ? (
                             <>
-                                <FolderOpenDot className="w-5 h-5 " color="blue"/> <span>{node.name}</span>
+                                <FolderOpenDot className="w-5 h-5 " color="blue" /> <span>{node.name}</span>
 
                             </>
                         ) : (
@@ -30,10 +32,12 @@ export const TreeNode = ({ node }) => {
                 )}
 
                 {node.type === 'file' && (
-                    <Button 
-                    variant="ghost"
+                    <Button
+                        variant="ghost"
+                        onClick={()=> selectItemForChild(node.id)}
+                        className={`hover:bg-blue-400 ${isSelectedChild === node.id && 'bg-blue-400'} text-xs`}
                     >
-                        < File  className="w-5 h-5 " color="yellow"/>{node.name}
+                        < File className="w-5 h-5 " color="yellow" />{node.name}
                     </Button>
                 )}
 
@@ -41,7 +45,7 @@ export const TreeNode = ({ node }) => {
                     <>
                         <div className="mr-6">
                             {node.children.map((child) => (
-                                 <TreeNode key={node.id} node={child} />
+                                <TreeNode key={node.id} node={child} />
                             ))}
                         </div>
                     </>

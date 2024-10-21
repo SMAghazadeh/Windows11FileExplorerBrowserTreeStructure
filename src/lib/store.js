@@ -34,12 +34,24 @@ export const useStore = create(
                     { id: 8, name: 'File8.txt', type: 'file' },
                     { id: 9, name: 'File9.txt', type: 'file' },
                     { id: 10, name: 'File10.txt', type: 'file' },
+                    {
+                        id: 11,
+                        name: 'SubFolder2',
+                        type: 'folder',
+                        isOpen: false,
+                        children: [
+                            { id: 12, name: 'File12.txt', type: 'file' },
+                            { id: 13, name: 'File13.txt', type: 'file' },
+                            { id: 14, name: 'File14.txt', type: 'file' },
+                            { id: 15, name: 'File15.txt', type: 'file' },
+                        ]
+                    },
                 ]
-
             }
         ],
 
-        isSelected: null,
+        isSelectedMainFolder: null,
+        isSelectedChild : null,
 
         toggleFolder: (id) => set((state) => {
             const toggleItem = (item) => {
@@ -56,7 +68,8 @@ export const useStore = create(
             return { treeData: toggleItem(state.treeData) };
         }),
 
-        selectItem: (id) => set({ selectedItem: id }),
+        selectItem: (id) => set({ isSelectedMainFolder: id }),
+        selectItemForChild: (id) => set({ isSelectedChild: id }),
 
 
     })
