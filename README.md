@@ -1,36 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Tree-like File Explorer Interface inspired by Windows 11
 
-## Getting Started
+This project is a practical exercise utilizing:
 
-First, run the development server:
+    1-React for building the UI components.
+    2-Next.js for the web framework.
+    3-Zustand for state management.
+    4-Tailwind CSS for styling.
+    5-Shadcn for UI components.
+    6-Lucide Icons for iconography.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Tree Structure: The interface mimics the right-aligned tree structure seen in the Windows 11 file explorer.
+    Interactive UI: Hovering over each folder highlights its UI differences, enhancing user interaction.
+    File Content Display: Clicking on a file displays its content in the left pane.
+    Folder Creation: Users can create a new folder by entering an ID and name, using an icon located to the right of each folder name.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+How to Use:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+    Navigating the Tree: Navigate through the tree structure by expanding folders and viewing their contents.
+    Viewing File Content: Click on a file to view its content in the left pane.
+    Creating a New Folder: Use the icon next to the folder name to create a new folder by entering an ID and name.
 
-## Learn More
+Technologies Used:
 
-To learn more about Next.js, take a look at the following resources:
+    1-React: A JavaScript library for building user interfaces.
+    2-Next.js: A React framework for production-level applications offering server-side rendering and   other powerful features.
+    3-Zustand: A minimal, yet powerful state management solution for React applications.
+    4-Tailwind CSS: A utility-first CSS framework for rapid UI development.
+    5-Shadcn: Provides UI components for enhancing the visual appearance of the project.
+    6-Lucide Icons: Lightweight SVG icons for better iconography representation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project Structure:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The project implements a hierarchical file explorer interface similar to Windows 11, focusing on user interaction and visual appeal using modern web technologies
