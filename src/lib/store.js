@@ -1,8 +1,9 @@
-import { immer } from "immer";
 import { create } from "zustand";
+import { immer } from 'zustand/middleware/immer';
+
 
 export const useStore = create(
-    (set) => ({
+    immer((set) => ({
         treeData: [
             {
                 id: 1,
@@ -186,7 +187,16 @@ export const useStore = create(
         selectItem: (id) => set({ isSelectedMainFolder: id }),
         selectItemForChild: (id) => set({ isSelectedChild: id }),
         selectTextForShow: (text) => set({ contextFiles: text }),
+        AddTreeData: (ID, NAME) => set((state) => {
+            state.treeData.push({
+                id: ID,
+                name: NAME,
+                type: 'folder',
+                isOpen: false,
+                children: []
+            })
+        })
 
 
-    })
+    }))
 )

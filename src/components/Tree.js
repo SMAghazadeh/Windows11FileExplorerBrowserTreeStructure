@@ -19,7 +19,6 @@ export const Tree = () => {
 
             <div className=" h-full m-5 p-5 bg-slate-100 rounded-lg flex  ">
                 <div className=" gap-2 flex flex-col">
-                   <div className="flex gap-2">
                    <Button
                         variant="outline" size="icon"
                         className="bg-yellow-300"
@@ -27,13 +26,7 @@ export const Tree = () => {
                     >
                         <FolderPlus className="h-4 w-4" />
                     </Button>
-                    <Button
-                        variant="outline" size="icon"
-                        className="bg-green-300"
-                    >
-                        <FilePlus2 className="h-4 w-4"/>
-                    </Button>
-                   </div>
+                   
                     {treeData.map((node) => (
                         <TreeNode key={node.id} node={node} />
                     ))}
